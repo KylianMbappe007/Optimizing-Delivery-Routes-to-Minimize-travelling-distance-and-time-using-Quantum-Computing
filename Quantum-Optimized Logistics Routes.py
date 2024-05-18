@@ -6,8 +6,9 @@ from qiskit.aqua.components.optimizers import COBYLA
 from qiskit import Aer
 
 #for easy purposes rather than using anonymous nodal points like A, B, C, D or E or any variables
-#actual numbers has been used to identify the distance between the two nodal points to ensure when
-#calculating the hamiltonian sum weight to observe the minimal cost, no stress on nodal points are
+#actual numbers has been used to identify the actual nodal point value to ensure when
+#calculating the hamiltonian sum weight when calculating edge nodal points
+#to observe the minimal cost, no stress on nodal points are
 #made
 distances = np.array([[0, 10, 15, 20],
                       [10, 0, 35, 25],
