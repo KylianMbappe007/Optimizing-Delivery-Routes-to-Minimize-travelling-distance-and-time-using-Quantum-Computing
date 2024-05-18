@@ -16,7 +16,7 @@ distances = np.array([[0, 10, 15, 20],
                       [20, 25, 30, 0]])
 qp = QuadraticProgram()
 
-#identified the len of distances between each nodal points as
+#identified the length [or the distance] of those nodal point values as
 #num_cities identifying the value between two nodal points
 
 num_cities = len(distances) 
