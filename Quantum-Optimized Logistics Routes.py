@@ -1,9 +1,13 @@
 import numpy as np
-from qiskit.optimization import QuadraticProgram
-from qiskit.optimization.algorithms import MinimumEigenOptimizer
-from qiskit.aqua.algorithms import QAOA
-from qiskit.aqua.components.optimizers import COBYLA
-from qiskit import Aer
+from qiskit.optimization import QuadraticProgram #provides quadratic problems which in a way can either be solved classic or quantum
+#as mentioned the fact that quantum computer can act both as a classical behaivour and quantum behaivour
+from qiskit.optimization.algorithms import MinimumEigenOptimizer #provides different quantum algorithms which
+#in this case makes use of whatever algorithm is required to output a ground state adibaple pathway
+from qiskit.aqua.algorithms import QAOA #the main algorithm [Quantum Approximate Optimization Algorithm] 
+#one of the fundamental algorithms to output an approximate and adibaple pathway
+from qiskit.aqua.components.optimizers import COBYLA #converting classical parameters into quantum algorithms
+from qiskit import Aer #Backend simulator for qiskit modules which allows the quantum
+#algorithms to run on classical hardware in order to simulate quantum circuits
 
 #for easy purposes rather than using anonymous nodal points like A, B, C, D or E or any variables
 #actual numbers has been used to identify the actual nodal point value to ensure when
