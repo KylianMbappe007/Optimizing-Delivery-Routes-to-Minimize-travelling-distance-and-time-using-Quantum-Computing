@@ -1,0 +1,29 @@
+print("map the problem to circuits and operators")
+print("identify the quantum output using n quantum bit inputs")
+import qiskit
+from qiskit import QuantumCircuit
+
+
+def get_n_qubit_circuit_GHZ_state(n):
+    qc = QuantumCircuit(n)
+    qc.h(0)
+    for i in range(n-1):
+        qc.cx(i, i+1)
+    return qc
+first_output = get_n_qubit_circuit_GHZ_state(10)
+first_output.draw(output='mpl')
+
+#as the distance between the two pauli matrices increase
+#the noise and error increases which leads to increase in
+#decoherence and equilibriation when QPU interacts with
+#any quantum environment
+from qiskit.quantum_info import SparsePauliOp
+
+def noise_error(n):
+    operators = ['Z' + 'I' * (n - 1 - i) + 'Z' + 'I' * (n - 2 - i) for i in range(n - 1)]
+    print(operators)
+    print(len(operators))
+    operator_solutions = [SparsePauliOp(operator) for operator in operators]
+    return operator_solutions
+n = 5
+solutions = noise_error(n)
